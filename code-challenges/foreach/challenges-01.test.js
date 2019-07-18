@@ -141,7 +141,26 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+    let newarr=[];
+    arr.forEach(function(element){
+  
+      if(element%3===0&&element%15!==0){
+        newarr.push('Fizz');
+      }
+      else if(element%5===0&&element%15!==0){
+        newarr.push('Buzz');
+      }
+      else if(element%15===0){
+        newarr.push('Fizz Buzz');
+      }
+      else{
+        newarr.push(element);
+      }
+    }
+  );
+    
+  return newarr;
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
