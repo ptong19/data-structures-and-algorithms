@@ -58,7 +58,9 @@ console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
 const setStatusAsAuthor = (people) => {
-    people["isAuthor"] = true;
+  for(let i in people){
+    people[i].isAuthor=true;
+  }
   
 };
 
