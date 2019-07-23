@@ -41,13 +41,7 @@ const sortByLength = (arr) => {
   });
   return arr;
 };
-// const sortByLength = (arr) => {
-//   // Solution code here...
-//   arr.sort((a,b)=>{
-//     return a.length- b.length;
-//   });
-//   return arr;
-// };
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -174,6 +168,18 @@ const meetings = [
 
 const sortMeetingsByDay = (arr) => {
   // Solution code here...
+  arr.sort((a,b)=> {
+    if (a.dayOfWeek === 'Friday'){
+      return 1;
+    }
+    if (a.dayOfWeek > b.dayOfWeek){
+      return 1;
+    }
+    if (a.dayOfWeek < b.dayOfWeek){
+      return -1;
+    }
+    return 0;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
