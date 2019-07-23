@@ -58,6 +58,8 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
+  arr.sort( (a,b) => a.toUpperCase().localeCompare(b.toUpperCase()) );
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,6 +77,8 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
+  arr.sort((a,b) => a.price - b.price);
+  return(arr);
 };
 
 /* ------------------------------------------------------------------------------------------------
