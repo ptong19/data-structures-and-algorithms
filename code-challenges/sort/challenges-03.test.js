@@ -168,19 +168,30 @@ const meetings = [
 
 const sortMeetingsByDay = (arr) => {
   // Solution code here...
-  arr.sort((a,b)=> {
-    if (a.dayOfWeek === 'Friday'){
-      return 1;
-    }
-    if (a.dayOfWeek > b.dayOfWeek){
-      return 1;
-    }
-    if (a.dayOfWeek < b.dayOfWeek){
-      return -1;
-    }
-    return 0;
+  var order={Monday:1,Tuesday:2,Wednesday:3,Thursday:4,Friday:5};
+  arr.sort(function(a,b){
+
+    return order[a.dayOfWeek]-order[b.dayOfWeek];
   });
+  return arr;
 };
+
+
+// const sortMeetingsByDay = (arr) => {
+//   // Solution code here...
+//   arr.sort((a,b)=> {
+//     if (a.dayOfWeek === 'Friday'){
+//       return 1;
+//     }
+//     if (a.dayOfWeek > b.dayOfWeek){
+//       return 1;
+//     }
+//     if (a.dayOfWeek < b.dayOfWeek){
+//       return -1;
+//     }
+//     return 0;
+//   });
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
