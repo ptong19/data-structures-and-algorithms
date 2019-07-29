@@ -80,10 +80,25 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
-  let result = [];
-  // Solution code here...
-  return result;
-};
+    let result = [];
+    // Solution code here...
+  
+    recipe.ingredients.forEach(element => {
+      let whitespace=0;
+      let str='';
+      for(let i=0;i<element.length;i++){
+  
+        if(element[i]===' '&&whitespace<2){
+          whitespace++;
+        }
+        if(whitespace>1){
+          str+=element[i];
+        }
+      }
+      result.push(str.trim());
+    });
+    return result;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
