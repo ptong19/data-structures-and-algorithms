@@ -34,6 +34,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  return arr.split('');
 };
 
 
@@ -79,10 +80,25 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
-  let result = [];
-  // Solution code here...
-  return result;
-};
+    let result = [];
+    // Solution code here...
+  
+    recipe.ingredients.forEach(element => {
+      let whitespace=0;
+      let str='';
+      for(let i=0;i<element.length;i++){
+  
+        if(element[i]===' '&&whitespace<2){
+          whitespace++;
+        }
+        if(whitespace>1){
+          str+=element[i];
+        }
+      }
+      result.push(str.trim());
+    });
+    return result;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -93,9 +109,13 @@ You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
 const splitFoods = (recipe) => {
-  let result = [];
-  // Solution code here...
-  return result;
+    let result = [];
+    // Solution code here...
+    recipe.ingredients.forEach(element=>{
+      result.push(element.split(' ').slice(2).join(' '));
+    });
+  
+    return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
