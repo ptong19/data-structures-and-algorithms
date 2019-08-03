@@ -27,6 +27,11 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
+  let newarr=[];
+  arr.forEach(element => {
+    newarr.push(Math.pow(2,element));
+  });
+  return newarr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,6 +42,8 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  return arr.map(number => 2** number)
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,6 +58,10 @@ For example: charCode(['h','i']) returns [104, 105].
 
 const charCode = (arr) => {
   // Solution code here...
+  let newarr = arr.map(function(v,i){
+      return v.charCodeAt();
+  });
+  return newarr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,6 +76,19 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (arr) => {
   // Solution code here...
+  let newarr=arr.map(function(n,i){
+    if(Number(n)){
+      if(n%2===0){
+        return 'even';
+      }
+      else return 'odd';
+
+    }
+
+    else return 'N/A';
+  }
+  );
+  return newarr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -110,8 +134,14 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
-};
+    // Solution code here...
+    let newarr=arr.map(function(n,i){
+      return n.ability.name;
+    });
+    return newarr;
+  
+  
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -158,6 +188,7 @@ const snorlaxStats = {
 
 const extractStats = (arr) => {
   // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
