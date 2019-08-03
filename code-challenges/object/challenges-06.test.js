@@ -95,9 +95,15 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-};
-
+    // Solution code here...
+    for(let i in arr){
+      if(Object.values(arr[i]).includes(character)){
+        if( arr[i].children.length===0) return false;
+        else {return true;}
+      }
+    }
+  
+  };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -107,8 +113,16 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
-};
+    // Solution code here...
+    for(let i in arr){
+      if(Object.entries(arr[i])[0][1]===character){
+        if(arr[i].children.length===0)return false;
+        else return true;
+      }
+    }
+  
+  
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -117,8 +131,19 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  // Solution code here...
-};
+    let counter=0;
+    arr.forEach(el=>{
+      counter++;
+      if(el.spouse!==null){
+        counter++;
+      }
+      if(el.children.length!==0){
+        counter+=el.children.length;
+      }
+    });
+    return counter;
+  };
+  
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
