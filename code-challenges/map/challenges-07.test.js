@@ -58,8 +58,8 @@ For example: charCode(['h','i']) returns [104, 105].
 
 const charCode = (arr) => {
   // Solution code here...
-  let newarr = arr.map(function(h,i){
-      return h.charCodeAt();
+  let newarr = arr.map(function(v,i){
+      return v.charCodeAt();
   });
   return newarr;
 };
@@ -134,8 +134,14 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
-};
+    // Solution code here...
+    let newarr=arr.map(function(n,i){
+      return n.ability.name;
+    });
+    return newarr;
+  
+  
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -182,6 +188,7 @@ const snorlaxStats = {
 
 const extractStats = (arr) => {
   // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
