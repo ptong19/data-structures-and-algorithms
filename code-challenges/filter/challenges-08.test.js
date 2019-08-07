@@ -96,8 +96,11 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
-};
+    // Solution code here...
+    let newarr=arr.filter(item=>item.baseStat>minBaseStat);
+    let newarr2=newarr.map(item=>item.stat.name);
+    return newarr2;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
