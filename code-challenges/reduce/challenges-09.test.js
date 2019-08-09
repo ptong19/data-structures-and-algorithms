@@ -73,8 +73,14 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
-};
+    // Solution code here...
+    let newarr=arr.reduce(function(name,value,idx){
+      name.push(value.name);
+      return name;
+    },[]);
+    return newarr;
+  };
+  
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -85,8 +91,14 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
-};
+    // Solution code here...
+    let arr=str.split('');
+    let newarr=arr.reduce(function(acc,value,idx){
+  
+      return value.concat(acc);
+    },[]);
+    return newarr;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
