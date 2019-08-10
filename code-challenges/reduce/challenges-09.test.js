@@ -150,8 +150,14 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
-};
+    let number = arr.reduce((acc, val) => {
+      if(val.children){
+        acc = acc + val.children.length;
+      }
+      return acc;
+    }, 0);
+    return number;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -162,9 +168,14 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
-};
-
+    // Solution code here...
+    let newarr=arr.reduce(function(acc,item,idx){
+  
+      return acc+=item;
+  
+    },0);
+    return newarr/arr.length;
+  };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -183,8 +194,15 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
-};
+    // Solution code here...
+    let newarr=arr.reduce(function(acc,item,idx){
+      if(isPrime(item)!==false){
+        acc++;
+      }
+      return acc;
+    },0);
+    return newarr;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -226,9 +244,14 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
-};
-
+    let thing = arr.reduce((acc, val) => {
+      if (val.stat.name === statName){
+        return acc = val;
+      }
+      return acc;
+    }, {});
+    return thing;
+  };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
@@ -240,9 +263,24 @@ Write a function named extractChildren that, given the array of characters from 
 ------------------------------------------------------------------------------------------------ */
 
 const extractChildren = (arr) => {
-  // Solution code here...
-};
-
+    // Solution code here...
+  
+    let newarr=arr.filter(item=>item.name.includes('a'));
+    let new3=newarr.filter(item=>item.children);
+    let newarr1=new3.reduce((accumulator,item,idx)=>{
+  
+      accumulator.push(item.children);
+      return accumulator;
+  
+    },[]);
+  
+    let new2=newarr1.reduce((accumulator,item,idx)=>{
+  
+      return accumulator.concat(item);
+    },[]);
+    return new2;
+  
+  };
 /* ------------------------------------------------------------------------------------------------
 TESTS
 
