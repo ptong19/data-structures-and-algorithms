@@ -244,7 +244,13 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-   
+    let thing = arr.reduce((acc, val) => {
+        if (val.stat.name === statName){
+          return acc = val;
+        }
+        return acc;
+      }, {});
+      return thing;
   };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
