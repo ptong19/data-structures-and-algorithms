@@ -144,7 +144,6 @@ let findShortest = (data) => {
       return acc;
     }
   }, 1000);
-
   let shortest = data.filter(n => n.height === `${sHeight}`);
   return shortest[0].name;
 };
