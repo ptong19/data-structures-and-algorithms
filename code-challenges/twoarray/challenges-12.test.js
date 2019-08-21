@@ -76,9 +76,16 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
-
-};
+    // Solution code here...
+    for(let i in arr){
+      for(var j=0;j<arr[i].items.length;j++){
+        if(arr[i].items[j].name==='Treats')
+  
+          return parseInt(arr[i].items[j].quantity);
+  
+      }
+    }
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
