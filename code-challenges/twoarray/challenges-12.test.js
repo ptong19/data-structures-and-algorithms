@@ -140,7 +140,17 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+    // Solution code here...
+    let sumweek=0;
+    for (let i in weather){
+  
+      for(var j=0;j<weather[i].length;j++){
+        sumweek+=weather[i][j];
+      }
+  
+    }
+  
+    return sumweek/28;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -177,7 +187,19 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
+    // Solution code here...
+    let newstr=str.split('\n');
+    let arr=[];
+    for(var i=0;i<newstr.length;i++){
+  
+      let s=newstr[i].split(',');
+      s.forEach(e=>parseInt(e));
+  
+      arr.push(s[0]*3);
+  
+    }
+  
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
