@@ -24,9 +24,9 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
     let hourlySales = [];  
-      for( let i =0; i< hoursOpen.length; i++){
+      for( let i in hoursOpen){
           let sum =0;
-          for (let j=0; j< cookieStores.length; j++){
+          for (let j in cookieStores){
             sum += cookieStores[j][i];    
          }
           hourlySales.push(sum);
@@ -120,7 +120,19 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+    // Solution code here...
+    var p=1;
+    var q=1;
+    for(let i in numbers){
+  
+      for(var j=0;j<numbers[i].length;j++){
+  
+        p=p*numbers[i][j];
+  
+      }
+    }
+    q=q*p;
+    return q;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -140,7 +152,17 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+    // Solution code here...
+    let sumweek=0;
+    for (let i in weather){
+  
+      for(var j=0;j<weather[i].length;j++){
+        sumweek+=weather[i][j];
+      }
+  
+    }
+  
+    return sumweek/28;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -177,7 +199,19 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
+    // Solution code here...
+    let newstr=str.split('\n');
+    let arr=[];
+    for(var i=0;i<newstr.length;i++){
+  
+      let s=newstr[i].split(',');
+      s.forEach(e=>parseInt(e));
+  
+      arr.push(s[0]*3);
+  
+    }
+  
+    return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
