@@ -45,9 +45,18 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
-};
-
+    // Solution code here...
+    let arr=[];
+    for(let i in hours){
+  
+      let obj={};
+      obj.sales=data[i]+' cookies';
+      obj.time=hours[i];
+      arr.push(obj);
+    }
+  
+    return arr;
+  };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -67,8 +76,16 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
-};
+    // Solution code here...
+    for(let i in arr){
+      for(var j=0;j<arr[i].items.length;j++){
+        if(arr[i].items[j].name==='Treats')
+  
+          return parseInt(arr[i].items[j].quantity);
+  
+      }
+    }
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -89,8 +106,10 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
-};
+    //  Solution code here...
+    if(board[row][col]==='#') return 'hit';
+    else return 'miss';
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
