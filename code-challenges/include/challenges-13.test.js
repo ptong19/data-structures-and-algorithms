@@ -49,6 +49,13 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  let newstr='';
+  for(let i in str){
+    if(i%2!==0){
+      newstr+=str[i];
+    }
+  }
+  return newstr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,6 +66,13 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+  for(let i in arr){
+    if(!arr[i].includes(':)'))
+    {
+      return false;
+    }
+  }
+  return true;
 };
 
 /* ------------------------------------------------------------------------------------------------
