@@ -9,8 +9,17 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-  // Solution code here...
-};
+    // Solution code here...
+    let newarr=[];
+    for(let i in arr){
+  
+      newarr.push( );
+  
+  
+    }
+  
+    return newarr;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
