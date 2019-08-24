@@ -31,10 +31,13 @@ Write a function named standardizePhoneNumbers that takes in an array of phone n
 
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
-
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
-};
+    // Solution code here...
+    var phoneNumbers = arr.map(function(number){
+      return number.replace(/[^0-9]/g, '');
+    });
+    return phoneNumbers;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
