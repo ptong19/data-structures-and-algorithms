@@ -12,12 +12,12 @@ const toTitleCase = (arr) => {
     // Solution code here...
     let newarr=[];
     for(let i in arr){
-  
-      newarr.push( );
-  
-  
+
+      newarr.push(arr[i].charAt(0).toUpperCase()+arr[i].slice(1) );
+
+
     }
-  
+
     return newarr;
   };
 
