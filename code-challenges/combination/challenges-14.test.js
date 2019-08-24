@@ -94,11 +94,14 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
-  let newarr = [];
-    for(let i in arr){
+  let newarr=[];
 
-    }
-    return newarr
+  for(var i=0;i<arr.length;i++){
+
+    if(arr[i].mass>77)
+      newarr.push(arr[i].name);
+  }
+  return newarr.join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
