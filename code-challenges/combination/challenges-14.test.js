@@ -144,7 +144,10 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-// Solution code here...
+    // Solution code here...
+     var str='https://';
+    if(url.includes(str))return true;
+    else return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
